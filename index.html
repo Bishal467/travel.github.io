@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TravelMate — Itinerary Generator</title>
+
+  <!-- Link external CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">TravelMate</div>
+    <div class="muted">— Fast frontend itinerary generator</div>
+  </header>
+
+  <main class="container">
+    <section class="panel" aria-labelledby="main-title">
+      <h1 id="main-title">Plan your trip</h1>
+      <p class="muted">Type where you want to travel or pick a popular destination.</p>
+
+      <div class="search-row" role="search">
+        <input id="destination-input" type="search" placeholder="e.g. London" aria-label="Destination" />
+        <button id="generate-btn">Generate Itinerary</button>
+        <button class="ghost" id="reset-btn">Reset</button>
+      </div>
+
+      <div class="suggestions" id="suggestions" aria-hidden="false">
+        <!-- Filled by JS -->
+      </div>
+
+      <div class="itinerary-area" id="itinerary-area" aria-live="polite">
+        <!-- Itinerary cards appear here -->
+      </div>
+
+      <div class="controls">
+        <button id="print-btn">Print / Save as PDF</button>
+        <button class="ghost" id="another-btn">Generate Another</button>
+      </div>
+
+      <div class="feedback" id="feedback-panel" aria-hidden="true">
+        <div><strong>Feedback</strong> — tell us how you liked this itinerary</div>
+        <div style="margin-top:8px">
+          <div class="stars" id="star-row" role="radiogroup" aria-label="Rating">
+            <span class="star" data-value="1" role="radio" aria-checked="false">★</span>
+            <span class="star" data-value="2" role="radio" aria-checked="false">★</span>
+            <span class="star" data-value="3" role="radio" aria-checked="false">★</span>
+            <span class="star" data-value="4" role="radio" aria-checked="false">★</span>
+            <span class="star" data-value="5" role="radio" aria-checked="false">★</span>
+          </div>
+        </div>
+        <div style="margin-top:8px">
+          <textarea id="feedback-text" rows="3" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eef6ff" placeholder="Leave a comment (optional)"></textarea>
+        </div>
+        <div style="margin-top:8px"><button id="submit-feedback">Submit Feedback</button></div>
+        <div id="feedback-msg" class="muted" style="margin-top:8px"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Link external JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
