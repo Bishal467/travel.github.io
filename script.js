@@ -1,18 +1,70 @@
 // ====== Static itineraries ======
+// ====== Static itineraries ======
 const itineraries = {
   London: [
     { day: 1, theme: "Historic & Iconic", places: ["Buckingham Palace", "Westminster Abbey", "Big Ben", "London Eye"], transport: "Metro / Walk", duration: "8h" },
     { day: 2, theme: "Culture & Classics", places: ["British Museum", "Covent Garden", "Trafalgar Square", "National Gallery"], transport: "Bus / Walk", duration: "7h" },
     { day: 3, theme: "Modern & Scenic", places: ["Tower of London", "Tower Bridge", "Borough Market", "The Shard"], transport: "Metro / Walk", duration: "8h" }
   ],
+
   Paris: [
     { day: 1, theme: "Iconic Paris", places: ["Eiffel Tower", "Louvre Museum", "Champs-Élysées"], transport: "Metro / Walk", duration: "8h" },
-    { day: 2, theme: "Charming & Historic", places: ["Notre Dame", "Latin Quarter", "Montmartre"], transport: "Bus / Walk", duration: "7h" }
+    { day: 2, theme: "Charming & Historic", places: ["Notre Dame", "Latin Quarter", "Montmartre"], transport: "Bus / Walk", duration: "7h" },
+    { day: 3, theme: "Art & Romance", places: ["Musée d'Orsay", "Sainte-Chapelle", "Seine River Cruise"], transport: "Walk / Boat", duration: "8h" }
+  ],
+
+  Tokyo: [
+    { day: 1, theme: "Traditional Tokyo", places: ["Asakusa", "Senso-ji Temple", "Ueno Park"], transport: "Metro / Walk", duration: "8h" },
+    { day: 2, theme: "Modern Vibes", places: ["Shibuya Crossing", "Harajuku", "Meiji Shrine"], transport: "Metro / Walk", duration: "7h" },
+    { day: 3, theme: "Skyline & Culture", places: ["Tokyo Tower", "Odaiba", "TeamLab Planets"], transport: "Metro", duration: "8h" }
+  ],
+
+  NewYork: [
+    { day: 1, theme: "Classic Manhattan", places: ["Statue of Liberty", "Wall Street", "9/11 Memorial"], transport: "Subway / Walk", duration: "8h" },
+    { day: 2, theme: "Central & Cultural", places: ["Central Park", "Times Square", "Broadway Show"], transport: "Subway / Walk", duration: "7h" },
+    { day: 3, theme: "Museums & Views", places: ["Metropolitan Museum of Art", "Rockefeller Center", "Empire State Building"], transport: "Subway", duration: "8h" }
+  ],
+
+  Rome: [
+    { day: 1, theme: "Ancient Wonders", places: ["Colosseum", "Roman Forum", "Palatine Hill"], transport: "Walk", duration: "8h" },
+    { day: 2, theme: "Vatican & Faith", places: ["Vatican Museums", "St. Peter’s Basilica", "Sistine Chapel"], transport: "Metro / Walk", duration: "7h" },
+    { day: 3, theme: "Romantic Rome", places: ["Trevi Fountain", "Pantheon", "Piazza Navona"], transport: "Walk", duration: "8h" }
+  ],
+
+  Dubai: [
+    { day: 1, theme: "Modern Marvels", places: ["Burj Khalifa", "Dubai Mall", "Dubai Fountain"], transport: "Metro / Walk", duration: "8h" },
+    { day: 2, theme: "Desert & Culture", places: ["Desert Safari", "Al Fahidi Fort", "Dubai Creek"], transport: "Tour / Bus", duration: "7h" },
+    { day: 3, theme: "Luxury & Views", places: ["Palm Jumeirah", "Atlantis Hotel", "Dubai Marina"], transport: "Metro / Walk", duration: "8h" }
+  ],
+
+  Bangkok: [
+    { day: 1, theme: "Cultural Bangkok", places: ["Grand Palace", "Wat Pho", "Wat Arun"], transport: "Boat / Walk", duration: "8h" },
+    { day: 2, theme: "Markets & Modernity", places: ["Chatuchak Market", "Siam Paragon", "MBK Center"], transport: "Skytrain / Walk", duration: "7h" },
+    { day: 3, theme: "Relax & Dine", places: ["Chao Phraya River Cruise", "Asiatique Night Market"], transport: "Boat / Walk", duration: "8h" }
+  ],
+
+  Sydney: [
+    { day: 1, theme: "Harbour Icons", places: ["Sydney Opera House", "Harbour Bridge", "Circular Quay"], transport: "Walk / Ferry", duration: "8h" },
+    { day: 2, theme: "Beaches & Nature", places: ["Bondi Beach", "Coogee Walk", "Royal Botanic Gardens"], transport: "Bus / Walk", duration: "7h" },
+    { day: 3, theme: "City & Culture", places: ["Darling Harbour", "The Rocks", "Art Gallery of NSW"], transport: "Walk", duration: "8h" }
+  ],
+
+  Singapore: [
+    { day: 1, theme: "Futuristic City", places: ["Gardens by the Bay", "Marina Bay Sands", "Merlion Park"], transport: "MRT / Walk", duration: "8h" },
+    { day: 2, theme: "Cultural Heritage", places: ["Chinatown", "Little India", "Kampong Glam"], transport: "MRT / Walk", duration: "7h" },
+    { day: 3, theme: "Leisure & Nature", places: ["Sentosa Island", "Universal Studios", "VivoCity Mall"], transport: "Monorail / Walk", duration: "8h" }
+  ],
+
+  Istanbul: [
+    { day: 1, theme: "Historic Heart", places: ["Hagia Sophia", "Blue Mosque", "Topkapi Palace"], transport: "Walk / Tram", duration: "8h" },
+    { day: 2, theme: "Bazaar & Views", places: ["Grand Bazaar", "Spice Market", "Galata Tower"], transport: "Tram / Walk", duration: "7h" },
+    { day: 3, theme: "Bosphorus & Culture", places: ["Bosphorus Cruise", "Dolmabahce Palace", "Istiklal Street"], transport: "Ferry / Walk", duration: "8h" }
   ]
 };
 
-const fallbackAttractions = ["Central Park", "Main Museum", "Historic Center", "Popular Market", "Scenic Viewpoint", "Local Neighborhood"];
-const popular = ["London", "Paris", "Tokyo", "New York", "Rome", "Dubai"];
+// ====== Popular destinations ======
+const popular = ["London", "Paris", "Tokyo", "NewYork", "Rome", "Dubai", "Bangkok", "Sydney", "Singapore", "Istanbul"];
+
 
 // ====== Elements ======
 const destInput = document.getElementById("destination-input");
